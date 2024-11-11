@@ -75,6 +75,7 @@ contract TheFunixCryptoSim is ERC721, Ownable  {
         uint256 sireId
     )
         internal
+        view
         returns (SimAttributes memory)
     {
         SimAttributes memory matronAttr = sims[matronId].attributes;

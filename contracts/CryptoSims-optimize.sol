@@ -75,6 +75,7 @@ contract TheFunixCryptoSim is ERC721, Ownable  {
         uint256 sireId
     )
         internal
+        view
         returns (uint32)
     {
         SimAttributes memory matronAttr = decodeAttributes(sims[matronId].genes);
@@ -369,4 +370,8 @@ contract TheFunixCryptoSim is ERC721, Ownable  {
 
         return attributes;
 	}
+
+    function showSimAttribute(uint256 simId) public view returns(SimAttributes memory) {
+        return decodeAttributes(sims[simId].genes);
+    }
 }
